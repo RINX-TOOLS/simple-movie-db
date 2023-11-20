@@ -1,5 +1,6 @@
 import express from "express";
 import routers from "./routers";
+import 'dotenv/config'
 
 const PORT = process.env.PORT || 8080;
 const app = express();
