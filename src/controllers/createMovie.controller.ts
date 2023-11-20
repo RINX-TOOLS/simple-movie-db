@@ -26,8 +26,6 @@ const getMovieDetails = async (id: string | number): Promise<MovieDetails> => {
 export const createMovie = async (req: Request, res: Response) => {
     const { id, url } = req.body as Body
 
-    // await db.movie.deleteMany()
-
     const isExisted = await db.movie.findUnique({
         where: {
             id: Number(id)
