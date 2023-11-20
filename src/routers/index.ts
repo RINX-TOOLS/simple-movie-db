@@ -1,11 +1,9 @@
 import { Router } from "express";
-import hello from "./hello";
-import createMovie from "./createMovie.router";
+import movie from "./movie";
 
 const router = Router();
 
 export default (): Router => {
-  createMovie(router)
-  hello(router);
+  movie(router)
   return router;
 };
