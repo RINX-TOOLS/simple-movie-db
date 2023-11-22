@@ -2,7 +2,7 @@
     "rest-client.environmentVariables": {
 
         "$shared": {
-            "host": "http://localhost:8080"
+            "host": "http://localhost:3000"
         },
         "prod": {
             "host": "https://simplemoviedb.rinx.dev"
