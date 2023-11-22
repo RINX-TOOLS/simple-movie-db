@@ -1,0 +1,19 @@
+### Create New Movie
+POST {{host}}/movie/create
+Content-Type: application/json
+
+{
+    "id": 609681,
+    "url": "https://example.com/playlist.m3u8"
+}
+
+### Health Check
+GET {{host}}/healthz
+
+
+### Ctrl1 + Alt + E
+
+
+### Get all movies
+GET {{host}}/movies
+?page=1&itemsPerPage=3
