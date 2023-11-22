@@ -20,7 +20,9 @@ export default async function RecentlyAddedMovies() {
 
   return (
     <div data-headers={headers()}>
-      <div>{movieCount}</div>
+      <div>
+        <h2 className="text-xl">Recently Added ({movieCount})</h2>
+      </div>
       <ol>
         {movies.map((movie: any) => (
           <li key={movie.id}>

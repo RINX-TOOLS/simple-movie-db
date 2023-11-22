@@ -9,7 +9,8 @@ import { setIdToCookie } from "./set-id-cookie-action";
 type Results = {
   id: number;
   title: string;
-  poster_path: string;
+  poster: string;
+  date: string;
 };
 
 export default function New() {
@@ -17,9 +18,14 @@ export default function New() {
   const search_results = cookies().get("search_results")?.value;
 
   return (
-    <main className="h-screen max-w-5xl mx-auto p-6">
+    <main className="h-screen max-w-5xl mx-auto p-6 space-y-3">
       <form action={searchMovies}>
-        <input type="text" placeholder="Search" name="query" />
+        <input
+          className="px-3 py-1 rounded"
+          type="text"
+          placeholder="Search"
+          name="query"
+        />
       </form>
       {search_results && (
         <div>
@@ -32,15 +38,15 @@ export default function New() {
                 value={result.id}
               />
               <SubmitButton
-                label={`${movieId === String(result.id) ? "✅" : "➡️"} ${
-                  result.title
-                }`}
+                label={`${movieId === String(result.id) ? "✅" : "➡️"} (${
+                  result.date && result.date?.slice(0, 4)
+                }) ${result.title}`}
               />
             </form>
           ))}
         </div>
       )}
-      <form className="flex gap-3" action={createMovie}>
+      <form className="grid gap-3" action={createMovie}>
         <input
           className="px-3 py-1 rounded"
           type="text"
