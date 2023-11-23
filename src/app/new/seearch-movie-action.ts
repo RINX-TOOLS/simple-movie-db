@@ -18,7 +18,7 @@ export async function searchMovies(formData: FormData): Promise<void> {
     const url = new URL(`${tmdbConfig.baseUrl}/search/movie?query=${query}&include_adult=false&language=en-US&page=1`)
     const res = await fetch(url, { headers: tmdbConfig.headers })
     const search = await res.json() as Search
-    const results = search.results.slice(0, 6).map((movie) => ({
+    const results = search.results.slice(0, 3).map((movie) => ({
         id: movie.id,
         title: movie.title,
         poster: movie.poster_path,

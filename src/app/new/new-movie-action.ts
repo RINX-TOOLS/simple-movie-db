@@ -26,11 +26,11 @@ export const createMovie = async (formData: FormData) => {
             plays: {
                 create: {
                     label: "Default",
-                    url,
+                    url: url.replace(/\s/g, ''),
                 },
             },
         },
     });
 
-    revalidatePath("/new");
+    revalidatePath("/new")
 };
