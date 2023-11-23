@@ -10,6 +10,9 @@ export default async function RecentlyAddedMovies() {
       title: true,
     },
     take: 12,
+    orderBy: {
+      createdAt: "desc",
+    },
   });
 
   const movieCount = await db.movie.count();
